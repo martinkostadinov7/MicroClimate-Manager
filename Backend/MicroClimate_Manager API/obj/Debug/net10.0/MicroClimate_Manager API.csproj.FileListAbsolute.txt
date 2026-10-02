@@ -1,0 +1,37 @@
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\bin\Debug\net10.0\appsettings.Development.json
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\bin\Debug\net10.0\appsettings.json
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\bin\Debug\net10.0\MicroClimate_Manager API.staticwebassets.endpoints.json
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\bin\Debug\net10.0\MicroClimate_Manager API.exe
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\bin\Debug\net10.0\MicroClimate_Manager API.deps.json
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\bin\Debug\net10.0\MicroClimate_Manager API.runtimeconfig.json
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\bin\Debug\net10.0\MicroClimate_Manager API.dll
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\bin\Debug\net10.0\MicroClimate_Manager API.pdb
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\bin\Debug\net10.0\Microsoft.OpenApi.dll
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\MicroClimate_Manager API.csproj.AssemblyReference.cache
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\MicroClimate_Manager API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\MicroClimate_Manager API.AssemblyInfoInputs.cache
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\MicroClimate_Manager API.AssemblyInfo.cs
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\MicroClimate_Manager API.csproj.CoreCompileInputs.cache
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\MicroClimate_Manager API.MvcApplicationPartsAssemblyInfo.cs
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\MicroClimate_Manager API.MvcApplicationPartsAssemblyInfo.cache
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\scopedcss\bundle\MicroClimate_Manager API.styles.css
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\staticwebassets.build.json
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\staticwebassets.development.json
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\swae.build.ex.cache
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\MicroCli.5FCF8AFE.Up2Date
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\MicroClimate_Manager API.dll
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\refint\MicroClimate_Manager API.dll
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\MicroClimate_Manager API.pdb
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\MicroClimate_Manager API.genruntimeconfig.cache
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\ref\MicroClimate_Manager API.dll
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll

@@ -1,0 +1,135 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3CF47DDC-D347-47BE-B315-71949DAE74DC}|MicroClimate_Manager API.csproj|c:\\maus\\programming\\microclimate manager\\backend\\microclimate_manager api\\controllers\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CF47DDC-D347-47BE-B315-71949DAE74DC}|MicroClimate_Manager API.csproj|solutionrelative:controllers\\datacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CF47DDC-D347-47BE-B315-71949DAE74DC}|MicroClimate_Manager API.csproj|c:\\maus\\programming\\microclimate manager\\backend\\microclimate_manager api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3CF47DDC-D347-47BE-B315-71949DAE74DC}|MicroClimate_Manager API.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CF47DDC-D347-47BE-B315-71949DAE74DC}|MicroClimate_Manager API.csproj|c:\\maus\\programming\\microclimate manager\\backend\\microclimate_manager api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CF47DDC-D347-47BE-B315-71949DAE74DC}|MicroClimate_Manager API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CF47DDC-D347-47BE-B315-71949DAE74DC}|MicroClimate_Manager API.csproj|c:\\maus\\programming\\microclimate manager\\backend\\microclimate_manager api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3CF47DDC-D347-47BE-B315-71949DAE74DC}|MicroClimate_Manager API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CF47DDC-D347-47BE-B315-71949DAE74DC}|MicroClimate_Manager API.csproj|c:\\maus\\programming\\microclimate manager\\backend\\microclimate_manager api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3CF47DDC-D347-47BE-B315-71949DAE74DC}|MicroClimate_Manager API.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DataController.cs",
+              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Controllers\\DataController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DataController.cs",
+              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Controllers\\DataController.cs",
+              "RelativeToolTip": "Controllers\\DataController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-02T10:34:00.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-02T10:32:34.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-02T10:26:47.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-02T10:26:45.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-02T10:26:17.107Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1524,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
