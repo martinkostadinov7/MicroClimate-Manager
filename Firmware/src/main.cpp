@@ -6,7 +6,7 @@
 
 const char* ssid     = "H770";
 const char* password = "123456789";
-const char* serverUrl = "http://192.168.137.1:5000/";
+const char* serverUrl = "http://192.168.137.1:5029/api/data";
 
 #define DHTPIN 33
 #define DHTTYPE DHT11
@@ -126,29 +126,6 @@ float getAverage(float array[], int count){
 void sendData(){
   unsigned long currentMillis = millis();
 
-  if (WiFi.status() == WL_CONNECTED) {
-    HTTPClient http;
-
-    http.begin(serverUrl);
-    http.addHeader("Content-Type", "application/json");
-    String jsonPayload = "{\"status\":\"test\", \"message\":\"Hello from ESP32!\"}";
-
-    Serial.println("Sending request to server");
-    
-    int httpResponseCode = http.POST(jsonPayload);
-
-    if (httpResponseCode > 0) {
-      Serial.print("Success code: ");
-      Serial.println(httpResponseCode);
-    } else {
-      Serial.print("Error: ");
-      Serial.println(httpResponseCode);
-    }
-
-    http.end();
-  } else {
-    Serial.println("No wifi connection!");
-  }
   if (currentMillis - previousDataSendTimer >= SEND_DATA_INTERVAL) {
     
     Serial.println("Sending data!");
@@ -257,8 +234,32 @@ void handleWatering() {
 
 
 void loop() {
-  readData();
-  handleClimateControl();
-  handleWatering();
-  sendData();
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+
+    http.begin(serverUrl);
+    http.addHeader("Content-Type", "application/json");
+    String jsonPayload = "{\"status\":\"test\", \"message\":\"Hello from ESP32!\"}";
+
+    Serial.println("Sending request to server");
+    
+    int httpResponseCode = http.POST(jsonPayload);
+
+    if (httpResponseCode > 0) {
+      Serial.print("Success code: ");
+      Serial.println(httpResponseCode);
+    } else {
+      Serial.print("Error: ");
+      Serial.println(httpResponseCode);
+    }
+
+    http.end();
+  } else {
+    Serial.println("No wifi connection!");
+  }
+  delay(10000);
+  // readData();
+  // handleClimateControl();
+  // handleWatering();
+  // sendData();
 }

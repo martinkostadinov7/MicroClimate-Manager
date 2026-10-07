@@ -35,3 +35,4 @@ C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\De
 C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Maus\Programming\MicroClimate Manager\Backend\MicroClimate_Manager API\obj\Debug\net10.0\MicroClimate_Manager API.sourcelink.json

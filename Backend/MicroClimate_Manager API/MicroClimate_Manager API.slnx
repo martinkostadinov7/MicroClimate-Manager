@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="MicroClimate_Manager API.csproj" />
+  <Project Path="../Data/Data.csproj" Id="29077e94-c186-4962-a112-88e16ca7ac41" />
+  <Project Path="../Services/Services.csproj" Id="3e03917b-db58-40f6-a196-57a4cced5984" />
+  <Project Path="../Shared/Shared.csproj" Id="edab60ad-c631-4eb3-a1c2-3c5a76132306" />
+  <Project Path="API.csproj" />
 </Solution>

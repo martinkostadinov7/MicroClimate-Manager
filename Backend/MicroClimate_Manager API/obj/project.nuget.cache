@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dsmnX7Xb7do=",
+  "dgSpecHash": "0x74g0c1/2Q=",
   "success": true,
-  "projectFilePath": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\MicroClimate_Manager API.csproj",
+  "projectFilePath": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\H770\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.6\\microsoft.aspnetcore.openapi.10.0.6.nupkg.sha512",
     "C:\\Users\\H770\\.nuget\\packages\\microsoft.openapi\\2.7.5\\microsoft.openapi.2.7.5.nupkg.sha512",

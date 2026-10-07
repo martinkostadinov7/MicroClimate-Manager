@@ -1,8 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace MicroClimate_Manager_API.Controllers
+namespace API.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class DataController : ControllerBase
     {
+        [HttpPost]
+        public IActionResult ReceiveData()
+        {
+            return Ok();
+        }
     }
 }

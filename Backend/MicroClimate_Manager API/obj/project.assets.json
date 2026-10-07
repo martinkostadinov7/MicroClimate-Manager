@@ -294,9 +294,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\MicroClimate_Manager API.csproj",
-      "projectName": "MicroClimate_Manager API",
-      "projectPath": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\MicroClimate_Manager API.csproj",
+      "projectUniqueName": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\API.csproj",
+      "projectName": "API",
+      "projectPath": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\API.csproj",
       "packagesPath": "C:\\Users\\H770\\.nuget\\packages\\",
       "outputPath": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "ContainingType": "MicroClimate_Manager_API.Controllers.DataController",
+    "Method": "ReceiveData",
+    "RelativePath": "api/Data",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "data",
+        "Type": "MicroClimate_Manager_API.Controllers.SensorDataDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
