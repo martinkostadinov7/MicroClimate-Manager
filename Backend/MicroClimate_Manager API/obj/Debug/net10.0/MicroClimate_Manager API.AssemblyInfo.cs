@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MicroClimate_Manager API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d20745f61ba34a50d8e0844f0b3be765e2cfcc9")]
 [assembly: System.Reflection.AssemblyProductAttribute("MicroClimate_Manager API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MicroClimate_Manager API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
