@@ -3,10 +3,11 @@
 #include <DHT.h>
 #include <WiFi.h>
 #include <HTTPClient.h>
+#include <ArduinoJson.h>
 
-const char* ssid     = "H770";
-const char* password = "123456789";
-const char* serverUrl = "http://192.168.137.1:5029/api/data";
+  const char* ssid     = "H770";
+  const char* password = "123456789";
+  const char* serverUrl = "http://192.168.137.1:5029/api";
 
 #define DHTPIN 33
 #define DHTTYPE DHT11
@@ -20,21 +21,22 @@ const char* serverUrl = "http://192.168.137.1:5029/api/data";
 DHT dht(DHTPIN, DHTTYPE);
 
 const unsigned long READ_DATA_INTERVAL = 2000; 
+const unsigned long CHECK_RANGES_INTERVAL = 60000; 
 const unsigned long CLIMATE_CONTROL_INTERVAL = 10000;   
 const unsigned long SEND_DATA_INTERVAL = 60000;   
 const unsigned long SOIL_CHECK_INTERVAL = 10000;
 const unsigned long PUMP_RUN_TIME = 5000;  // watering for 5 seconds
 const unsigned long SOAKING_TIME = 60000; // waiting for water soak for 1 minute
 
-
-unsigned long previousSoilCheckTimer = 0;
 unsigned long previousDataReadTimer = 0;
-unsigned long previousDataSendTimer = 0;
+unsigned long previousCheckRangesTimer = 0;
 unsigned long previousClimateCheckTimer = 0;
+unsigned long previousSoilCheckTimer = 0;
 unsigned long previousWaterPumpTimer = 0;
+unsigned long previousDataSendTimer = 0;
 
-int moistureAirValue = 2000;   // 0% wet
-int moistureWaterValue = 1600; // 100% wet
+int moistureAirValue = 1980;   // 0% wet
+int moistureWaterValue = 4095; // 100% wet
 
 float temperatureMax = 30; 
 float temperatureMin = 26; 
@@ -69,13 +71,56 @@ void setup() {
   pinMode(heater, OUTPUT);
 
   WiFi.begin(ssid, password);
-
+  Serial.println("Connecting to wifi");
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
   }
+  Serial.println("Connected!");
 
   dht.begin();
+
+   HTTPClient http;
+  String settingsUrl = serverUrl + String("/settings");
+  http.begin(settingsUrl);
+  http.addHeader("Content-Type", "application/json");
+  int httpResponseCode = http.GET();
+
+  if (httpResponseCode == HTTP_CODE_OK) {
+    String payload = http.getString();
+    http.end();
+
+    JsonDocument doc;
+    DeserializationError error = deserializeJson(doc, payload);
+
+    if (error) {
+      Serial.print("JSON Parsing failed: ");
+      Serial.println(error.c_str());
+      return;
+    }
+
+    JsonArray settings = doc.as<JsonArray>();
+
+    if (settings.size() > 0) {
+      for (JsonObject setting : settings) {
+        String settingName = setting["settingName"];
+        float parsedValue = setting["value"].as<String>().toFloat();
+
+        if (settingName == "TemperatureMin") temperatureMin = parsedValue;
+        else if (settingName == "TemperatureMax") temperatureMax = parsedValue;
+        else if (settingName == "HumidityMin") humidityMin = parsedValue;
+        else if (settingName == "HumidityMax") humidityMax = parsedValue;
+        else if (settingName == "MoistureMin") moistureMin = parsedValue;
+        else if (settingName == "MoistureMax") moistureMax = parsedValue;
+        Serial.println(settingName + " - " + String(parsedValue));
+      }
+
+    } else {
+      Serial.print("HTTP GET Error code: ");
+      Serial.println(httpResponseCode);
+      http.end();
+    }
+  }
 }
 
 void readData(){
@@ -123,18 +168,60 @@ float getAverage(float array[], int count){
   return average;
 }
 
-void sendData(){
+void sendSensorData(){
   unsigned long currentMillis = millis();
 
   if (currentMillis - previousDataSendTimer >= SEND_DATA_INTERVAL) {
-    
-    Serial.println("Sending data!");
     previousDataSendTimer = currentMillis;
     float temperatureAverage = getAverage(temperatureArray, arraySize);
     float humidityAverage = getAverage(humidityArray, arraySize);
     float moistureAverage = getAverage(moistureArray, arraySize);
 
+    if (WiFi.status() == WL_CONNECTED) {
+      HTTPClient http;
+      String sensorReadingsUrl = serverUrl + String("/sensorReadings");
+      http.begin(sensorReadingsUrl);
+      http.addHeader("Content-Type", "application/json");
+      
+      JsonDocument doc;
+
+      doc["temperature"] = round(temperatureAverage * 10.0) / 10.0;
+      doc["humidity"] = round(humidityAverage * 10.0) / 10.0;
+      doc["soilMoisture"] = round(moistureAverage * 10.0) / 10.0;
+
+      String jsonPayload;
+      serializeJson(doc, jsonPayload);
+      
+      Serial.println("HTTP: Sending sensor data!");
+      http.POST(jsonPayload);
+      http.end();
+    } else {
+      Serial.println("No wifi connection!");
+    }
   }
+}
+
+void sendActuatorData(String deviceName, int state){
+  if (WiFi.status() == WL_CONNECTED) {
+      HTTPClient http;
+      String sensorReadingsUrl = serverUrl + String("/actuatorLogs");
+      http.begin(sensorReadingsUrl);
+      http.addHeader("Content-Type", "application/json");
+      
+      JsonDocument doc;
+
+      doc["deviceName"] = deviceName;
+      doc["state"] = state;
+
+      String jsonPayload;
+      serializeJson(doc, jsonPayload);
+
+      Serial.println("HTTP: Sending actuator info");
+      int httpResponseCode = http.POST(jsonPayload);
+      http.end();
+    } else {
+      Serial.println("No wifi connection!");
+    }
 }
 
 void handleClimateControl(){
@@ -151,23 +238,17 @@ void handleClimateControl(){
     float temperatureMiddle = (temperatureMax + temperatureMin) / 2;
     float humidityMiddle = (humidityMax + humidityMin) / 2;
   
-    Serial.print("Checking climate metrics - Temp: ");
-    Serial.print(temperatureAverage, 1); // Показва 1 знак след запетаята
-    Serial.print(" °C | Humidity: ");
-    Serial.print(humidityAverage, 1);
-    Serial.println(" %");
-  
     if (heaterRunning && (temperatureAverage > temperatureMiddle)) // temperature is in optimal range
     {
       digitalWrite(heater, LOW);
-      Serial.println("Temperature is ok, heater off");
+      sendActuatorData("heater", 0);
       heaterRunning = false;
     }
   
     if (fanRunning && (humidityAverage < humidityMiddle)) // humidity is in optimal range
     {
       digitalWrite(fan, LOW);
-      Serial.println("Humidity is ok, fan off");
+      sendActuatorData("fan", 0);
       fanRunning = false;
     }
     
@@ -175,7 +256,7 @@ void handleClimateControl(){
     if (!fanRunning && (humidityAverage > humidityMax)) // high humidity
     {
       digitalWrite(fan, HIGH);
-      Serial.println("Humidity is high, activating fan");
+      sendActuatorData("fan", 1);
       fanRunning = true;
     }
   
@@ -184,7 +265,7 @@ void handleClimateControl(){
       if (currentPumpState != PumpState::PUMPING)
       {
         digitalWrite(heater, HIGH);
-        Serial.println("Temperature is low, activating heater");
+        sendActuatorData("heater", 1);
         heaterRunning = true;
       }
     }
@@ -199,15 +280,14 @@ void handleWatering() {
     if (currentMillis - previousSoilCheckTimer >= SOIL_CHECK_INTERVAL) {
         previousSoilCheckTimer = currentMillis;
         float moistureAvg = getAverage(moistureArray, 5);
-        Serial.print(" °C | Soil Moisture: ");
-        Serial.print(moistureAvg, 1);
-        Serial.println(" %");
           if (readingsCount > 0 && moistureAvg < moistureMin) {
-            if (heaterRunning)
+            if (heaterRunning){
               digitalWrite(heater, LOW);
+              sendActuatorData("heater", 0);
               heaterRunning = false;
-            Serial.println("Soil is dry, starting water pump");
+            }
             digitalWrite(pump, HIGH);
+            sendActuatorData("pump", 1);
             pumpStateTimer = currentMillis;
             currentPumpState = PUMPING;
           }
@@ -217,7 +297,7 @@ void handleWatering() {
     case PUMPING:
       if (currentMillis - pumpStateTimer >= PUMP_RUN_TIME) {
         digitalWrite(pump, LOW);
-        Serial.println("Pumping over, starting to soak.");
+        sendActuatorData("pump", 0);
         pumpStateTimer = currentMillis;
         currentPumpState = SOAKING;
       }
@@ -226,40 +306,84 @@ void handleWatering() {
     case SOAKING:
       if (currentMillis - pumpStateTimer >= SOAKING_TIME) {
         currentPumpState = IDLE;
-        Serial.println("Soaking is done, checking soil moisture!");
       }
       break;
   }
 }
 
+void applyRanges() {
+  unsigned long currentMillis = millis();
+  if (currentMillis - previousCheckRangesTimer < CHECK_RANGES_INTERVAL) {
+    return;
+  }
+  previousCheckRangesTimer = currentMillis;
 
-void loop() {
-  if (WiFi.status() == WL_CONNECTED) {
-    HTTPClient http;
+  if (WiFi.status() != WL_CONNECTED) {
+    Serial.println("No wifi connection!");
+    return;
+  }
 
-    http.begin(serverUrl);
-    http.addHeader("Content-Type", "application/json");
-    String jsonPayload = "{\"status\":\"test\", \"message\":\"Hello from ESP32!\"}";
+  HTTPClient http;
+  String settingsUrl = serverUrl + String("/settings/unapplied");
+  http.begin(settingsUrl);
+  http.addHeader("Content-Type", "application/json");
 
-    Serial.println("Sending request to server");
-    
-    int httpResponseCode = http.POST(jsonPayload);
+  Serial.println("HTTP: Getting unapplied settings");
+  int httpResponseCode = http.GET();
 
-    if (httpResponseCode > 0) {
-      Serial.print("Success code: ");
-      Serial.println(httpResponseCode);
-    } else {
-      Serial.print("Error: ");
-      Serial.println(httpResponseCode);
+  if (httpResponseCode == HTTP_CODE_OK) {
+    String payload = http.getString();
+    http.end();
+
+    JsonDocument doc;
+    DeserializationError error = deserializeJson(doc, payload);
+
+    if (error) {
+      Serial.print("JSON Parsing failed: ");
+      Serial.println(error.c_str());
+      return;
     }
 
-    http.end();
+    JsonArray settings = doc.as<JsonArray>();
+
+    if (settings.size() > 0) {
+      for (JsonObject setting : settings) {
+        String settingName = setting["settingName"];
+        float parsedValue = setting["value"].as<String>().toFloat();
+
+        if (settingName == "TemperatureMin") temperatureMin = parsedValue;
+        else if (settingName == "TemperatureMax") temperatureMax = parsedValue;
+        else if (settingName == "HumidityMin") humidityMin = parsedValue;
+        else if (settingName == "HumidityMax") humidityMax = parsedValue;
+        else if (settingName == "MoistureMin") moistureMin = parsedValue;
+        else if (settingName == "MoistureMax") moistureMax = parsedValue;
+      }
+
+      String applySettingsUrl = serverUrl + String("/settings/apply");
+      http.begin(applySettingsUrl);
+      http.addHeader("Content-Type", "application/json");
+
+      String jsonPayload;
+      serializeJson(doc, jsonPayload);
+
+      Serial.println("HTTP: Sending settings to apply");
+      http.POST(jsonPayload);
+      http.end();
+    } else {
+      Serial.println("No unapplied settings found.");
+    }
+
   } else {
-    Serial.println("No wifi connection!");
+    Serial.print("HTTP GET Error code: ");
+    Serial.println(httpResponseCode);
+    http.end();
   }
-  delay(10000);
-  // readData();
-  // handleClimateControl();
-  // handleWatering();
-  // sendData();
+}
+
+void loop() {
+  readData();
+  applyRanges();
+  handleClimateControl();
+  handleWatering();
+  sendSensorData();
 }
