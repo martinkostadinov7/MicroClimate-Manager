@@ -37,5 +37,18 @@ namespace Services
             }
             return sensorReadingDtos;
         }
+
+        public async Task<SensorReadingReadDto> GetLatestAsync()
+        {
+            SensorReading? sensorReadingFromDb = await sensorReadingsRepository.GetLatestAsync();
+            
+            return new SensorReadingReadDto
+            {
+                Temperature = sensorReadingFromDb != null ? sensorReadingFromDb.Temperature : 0,
+                Humidity = sensorReadingFromDb != null ? sensorReadingFromDb.Humidity : 0,
+                SoilMoisture = sensorReadingFromDb != null ? sensorReadingFromDb.SoilMoisture : 0,
+                CreatedAt = sensorReadingFromDb != null ? sensorReadingFromDb.CreatedAt : DateTime.Now
+            };
+        }
     }
 }

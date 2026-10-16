@@ -15,6 +15,7 @@ builder.Services.AddScoped<ActuatorLogsService>();
 builder.Services.AddScoped<ActuatorLogsRepository>();
 builder.Services.AddScoped<SettingsService>();
 builder.Services.AddScoped<SettingsRepository>();
+builder.Services.AddScoped<DashboardService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
@@ -33,24 +34,28 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    var db = services.GetRequiredService<AppDbContext>();
-
-    db.Database.Migrate();
-
-    SeedData.SeedAll(db);
+    try
+    {
+        var db = services.GetRequiredService<AppDbContext>();
+        db.Database.Migrate();
+        SeedData.SeedAll(db);
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "Error while doing migration!");
+    }
 }
 
 app.UseCors("AllowAll");
-
+app.UseDefaultFiles();
+app.UseStaticFiles();
 app.MapControllers();
 
 app.Run();

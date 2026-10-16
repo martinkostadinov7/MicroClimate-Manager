@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>MicroClimate Manager</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+ <body>
+    <h1 id="title">MicroClimate Manager</h1>
+
+    <button id="settingsButton" class="button" onclick="window.location.href='index.html'">Dashboard</button>
+
+    <div class="container">
+      <h2>Adjust ranges</h2>
+      
+      <div class="inline">
+        <p>Temperature, °C</p>
+        <div class="range-inputs">
+          <div class="input-group">
+            <label for="tempMin">min</label>
+            <input type="number" id="tempMin" placeholder="0" step="0.5">
+          </div>
+          <span>-</span>
+          <div class="input-group">
+            <label for="tempMax">max</label>
+            <input type="number" id="tempMax" placeholder="0" step="0.5">
+          </div>
+        </div>
+      </div>
+
+      <div class="inline">
+        <p>Humidity, %RH</p>
+        <div class="range-inputs">
+          <div class="input-group">
+            <label for="humMin">min</label>
+            <input type="number" id="humMin" placeholder="0" step="0.5">
+          </div>
+          <span>-</span>
+          <div class="input-group">
+            <label for="humMax">max</label>
+            <input type="number" id="humMax" placeholder="0" step="0.5">
+          </div>
+        </div>
+      </div>
+      <div class="inline">
+        <p>Soil Moisture, %</p>
+        <div class="range-inputs">
+          <div class="input-group">
+            <label for="moistMin">min</label>
+            <input type="number" id="moistMin" placeholder="0" step="0.5">
+          </div>
+          <span>-</span>
+          <div class="input-group">
+            <label for="moistMax">max</label>
+            <input type="number" id="moistMax" placeholder="0" step="0.5">
+          </div>
+        </div>
+      </div>
+      <button id="saveButton" class="button" onclick="saveSettings()">Save</button>
+    </div>
+    <script src="settings.js"></script>
+</html>

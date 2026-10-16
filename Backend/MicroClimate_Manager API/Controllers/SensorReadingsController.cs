@@ -21,5 +21,12 @@ namespace API.Controllers
             var data = await sensorReadingsService.GetAllAsync();
             return Ok(data);
         }
+
+        [HttpGet("latest")]
+        public async Task<ActionResult<List<SensorReadingReadDto>>> GetLatestSensorReadings()
+        {
+            var data = await sensorReadingsService.GetLatestAsync();
+            return Ok(data);
+        }
     }
 }

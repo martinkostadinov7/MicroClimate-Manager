@@ -21,5 +21,12 @@ namespace API.Controllers
             var data = await actuatorLogsService.GetAllAsync();
             return Ok(data);
         }
+
+        [HttpGet("latest")]
+        public async Task<ActionResult<ActuatorLogsDto>> GetLatestActuatorLogs()
+        {
+            var data = await actuatorLogsService.GetLatestAsync();
+            return Ok(data);
+        }
     }
 }

@@ -1,0 +1,79 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroClimate Manager</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1 id="title">MicroClimate Manager</h1>
+
+    <button id="settingsButton" class="button" onclick="window.location.href='settings.html'">Settings</button>
+
+    <div class="latestDataContainer">
+      <div class="dataContainer">
+        <h2>Environment data</h2>
+        <div class="inline">
+          <p>Temperature</p>
+          <p class="value" id="temperature">--</p>
+        </div>
+        <div class="inline">
+          <p>Humidity</p>
+          <p class="value" id="humidity">--</p>
+        </div>
+        <div class="inline">
+          <p>Moisture</p>
+          <p class="value" id="moisture">--</p>
+        </div>
+      </div>  
+
+      <div class="dataContainer">
+        <h2>Actuators data</h2>
+        <div class="inline">
+          <p>Heater</p>
+          <p class="value" id="heater">--</p>
+        </div>
+        <div class="inline">
+          <p>Fan</p>
+          <p class="value" id="fan">--</p>
+        </div>
+        <div class="inline">
+          <p>Pump</p>
+          <p class="value" id="pump">--</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footerContainer">
+      <p>Data from <span id="lastRefreshed">--</span></p>
+      <button id="refreshButton" class="button" onclick="getData()">Refresh</button>
+    </div>
+
+    <div class="datePickerCard">
+      <div class="input-group">
+        <label for="dateFrom">From</label>
+        <input type="datetime-local" id="dateFrom" name="from">
+      </div>
+      <div class="input-group">
+        <label for="dateTo">To</label>
+        <input type="datetime-local" id="dateTo" name="to">
+      </div>
+      <button id="applyFilterButton" class="button">Apply</button>
+    </div>
+
+   <div class="chartsContainer">
+    <div class="chartCard">
+        <h3>Temperature and Humidity</h3>
+        <canvas id="tempHumidityChart"></canvas>
+    </div>
+    <div class="chartCard">
+        <h3>Soil Moisture</h3>
+        <canvas id="moistureChart"></canvas>
+    </div>
+</div>
+    
+    <script src="index.js"></script>
+  </body>
+</html>

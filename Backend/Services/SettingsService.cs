@@ -6,11 +6,21 @@ namespace Services
 {
     public class SettingsService(SettingsRepository settingsRepository)
     {
-        public async Task EditAsync(SettingDto dto) 
+        public async Task EditSettingsAsync(List<SettingDto> dtos)
         {
-            Setting setting = await settingsRepository.GetByNameAsync(dto.SettingName) ?? throw new NullReferenceException("Cannot found setting.");
-            setting.Value = dto.Value;
-            await settingsRepository.UpdateAsync(setting);
+            List<Setting> settingsFromDb = await settingsRepository.GetAllAsync();
+
+            foreach (var dto in dtos)
+            {
+                var setting = settingsFromDb.FirstOrDefault(s => s.SettingName == dto.SettingName);
+                if (setting != null)
+                {
+                    setting.Value = dto.Value;
+                    setting.Applied = false;
+                }
+            }
+
+            await settingsRepository.UpdateAsync(settingsFromDb);
         }
 
         public async Task<List<SettingDto>> GetAllUnappliedAsync()

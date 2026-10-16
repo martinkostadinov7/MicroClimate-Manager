@@ -19,22 +19,41 @@ namespace Services
             await actuatorLogsRepository.AddAsync(actuatorLog);
         }
 
-        public async Task<List<ActuatorLogReadDto>> GetAllAsync()
+        public async Task<List<ActuatorLogReadDto?>> GetAllAsync()
         {
             List<ActuatorLog> actuatorLogsFromDb = await actuatorLogsRepository.GetAllAsync();
 
-            List<ActuatorLogReadDto> actuatorLogsDtos = new List<ActuatorLogReadDto>();
+            List<ActuatorLogReadDto?> actuatorLogsDtos = new List<ActuatorLogReadDto?>();
             foreach (var actuatorLog in actuatorLogsFromDb)
             {
-                actuatorLogsDtos.Add(
-                    new ActuatorLogReadDto
-                    {
-                        DeviceName = actuatorLog.DeviceName,
-                        State = actuatorLog.State,
-                        CreatedAt = actuatorLog.CreatedAt
-                    });
+                actuatorLogsDtos.Add(MapToDto(actuatorLog));
             }
             return actuatorLogsDtos;
+        }
+
+        public async Task<ActuatorLogsDto> GetLatestAsync()
+        {
+            List<ActuatorLog> latestActuatorLogs = await actuatorLogsRepository.GetLatestAsync();
+            var dto = new ActuatorLogsDto
+            {
+                Heater = MapToDto(latestActuatorLogs.FirstOrDefault(l => l.DeviceName.ToLower() == "heater")),
+                Fan = MapToDto(latestActuatorLogs.FirstOrDefault(l => l.DeviceName.ToLower() == "fan")),
+                Pump = MapToDto(latestActuatorLogs.FirstOrDefault(l => l.DeviceName.ToLower() == "pump"))
+            };
+
+            return dto;
+        }
+
+        private ActuatorLogReadDto? MapToDto(ActuatorLog? log)
+        {
+            if (log is null) return null;
+
+            return new ActuatorLogReadDto
+            {
+                DeviceName = log.DeviceName,
+                State = log.State,
+                CreatedAt = log.CreatedAt
+            };
         }
     }
 }

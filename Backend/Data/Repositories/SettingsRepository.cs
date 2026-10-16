@@ -18,9 +18,9 @@ namespace Data.Repositories
 
             return setting;
         }
-        public async Task UpdateAsync(Setting setting)
+        public async Task UpdateAsync(List<Setting> settings)
         {
-            db.Entry(setting).State = EntityState.Modified;
+            db.Settings.UpdateRange(settings);
             await db.SaveChangesAsync();
         }
 

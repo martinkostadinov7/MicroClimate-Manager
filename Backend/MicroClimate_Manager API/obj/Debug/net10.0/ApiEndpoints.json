@@ -36,6 +36,77 @@
     ]
   },
   {
+    "ContainingType": "API.Controllers.ActuatorLogsController",
+    "Method": "GetLatestActuatorLogs",
+    "RelativePath": "api/ActuatorLogs/latest",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Shared.DTOs.ActuatorLog.ActuatorLogsDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API.Controllers.DashboardController",
+    "Method": "GetLatestData",
+    "RelativePath": "api/Dashboard/latestData",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Shared.DTOs.Dashboard.LatestDataDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "API.Controllers.DashboardController",
+    "Method": "GetStatistics",
+    "RelativePath": "api/Dashboard/statistics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "From",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "To",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Shared.DTOs.Dashboard.StatisticsDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "API.Controllers.SensorReadingsController",
     "Method": "AddSensorReading",
     "RelativePath": "api/SensorReadings",
@@ -72,16 +143,36 @@
     ]
   },
   {
+    "ContainingType": "API.Controllers.SensorReadingsController",
+    "Method": "GetLatestSensorReadings",
+    "RelativePath": "api/SensorReadings/latest",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Shared.DTOs.SensorReading.SensorReadingReadDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "API.Controllers.SettingsController",
-    "Method": "EditSetting",
+    "Method": "EditSettings",
     "RelativePath": "api/Settings",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "dto",
-        "Type": "Shared.DTOs.Setting.SettingDto",
+        "Name": "dtos",
+        "Type": "System.Collections.Generic.List\u00601[[Shared.DTOs.Setting.SettingDto, Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],
