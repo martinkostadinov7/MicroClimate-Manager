@@ -38,7 +38,7 @@ namespace Data.Repositories
             return latestLogs;
         }
 
-        public async Task<List<HeaterStatisticsDto>> GetHeaterStatsAsync(DateTime from, DateTime to)
+        public async Task<List<HeaterStatisticsDto>> GetHeaterAsync(DateTime from, DateTime to)
         {
             var readings = await db.ActuatorLogs
                 .Where(s => s.CreatedAt >= from && s.CreatedAt <= to)

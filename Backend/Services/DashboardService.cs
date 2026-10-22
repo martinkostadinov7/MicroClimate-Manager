@@ -49,20 +49,19 @@ namespace Services
                 CreatedAt = log.CreatedAt
             };
         }
-        public async Task<StatisticsDto> GetStatisticsAsync(QueryParamsStatisticsDto queryParams)
+        public async Task<ChartsDataDto> GetChartDataAsync(QueryParamsChartsDto queryParams)
         {
             DateTime from = queryParams.From;
             DateTime to = queryParams.To;
-            List<TemperatureStatisticsDto> temperatureStatisticsDtos = await sensorReadingsRepository.GetTemperatureStatsAsync(from, to);
-            List<HumidityStatisticsDto> humidityStatisticsDtos = await sensorReadingsRepository.GetHumidityStatsAsync(from, to);
-            List<MoistureStatisticsDto> moistureStatisticsDtos = await sensorReadingsRepository.GetMoistureStatsAsync(from, to);
-            List<HeaterStatisticsDto> heaterStatisticsDtos = await actuatorLogsRepository.GetHeaterStatsAsync(from, to);
-            StatisticsDto statisticsDto = new StatisticsDto
+            int targetPointsCount = queryParams.TargetPointsCount;
+            List<TemperatureRecordDto> temperatureStatisticsDtos = await sensorReadingsRepository.GetTemperatureRecordsAsync(from, to, targetPointsCount);
+            List<HumidityRecordDto> humidityStatisticsDtos = await sensorReadingsRepository.GetHumidityRecordsAsync(from, to, targetPointsCount);
+            List<MoistureRecordDto> moistureStatisticsDtos = await sensorReadingsRepository.GetMoistureRecordsAsync(from, to, targetPointsCount);
+            ChartsDataDto statisticsDto = new ChartsDataDto
             {
                 Temperature = temperatureStatisticsDtos,
                 Humidity = humidityStatisticsDtos,
-                Moisture = moistureStatisticsDtos,
-                Heater = heaterStatisticsDtos,
+                Moisture = moistureStatisticsDtos
             };
             return statisticsDto;
         }

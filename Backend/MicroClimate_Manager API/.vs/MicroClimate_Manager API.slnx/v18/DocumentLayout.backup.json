@@ -3,11 +3,26 @@
   "WorkspaceRootPath": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29077E94-C186-4962-A112-88E16CA7AC41}|..\\Data\\Data.csproj|c:\\maus\\programming\\microclimate manager\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|c:\\maus\\programming\\microclimate manager\\backend\\microclimate_manager api\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|solutionrelative:controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E03917B-DB58-40F6-A196-57A4CCED5984}|..\\Services\\Services.csproj|c:\\maus\\programming\\microclimate manager\\backend\\services\\dashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|c:\\maus\\programming\\microclimate manager\\backend\\microclimate_manager api\\controllers\\sensorreadingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|solutionrelative:controllers\\sensorreadingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|c:\\maus\\programming\\microclimate manager\\backend\\microclimate_manager api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|c:\\maus\\programming\\microclimate manager\\backend\\microclimate_manager api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29077E94-C186-4962-A112-88E16CA7AC41}|..\\Data\\Data.csproj|c:\\maus\\programming\\microclimate manager\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3E03917B-DB58-40F6-A196-57A4CCED5984}|..\\Services\\Services.csproj|c:\\maus\\programming\\microclimate manager\\backend\\services\\settingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -15,10 +30,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|c:\\maus\\programming\\microclimate manager\\backend\\microclimate_manager api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|c:\\maus\\programming\\microclimate manager\\backend\\microclimate_manager api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|c:\\maus\\programming\\microclimate manager\\backend\\microclimate_manager api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -34,13 +45,10 @@
       "AbsoluteMoniker": "D:0:0:{29077E94-C186-4962-A112-88E16CA7AC41}|..\\Data\\Data.csproj|c:\\maus\\programming\\microclimate manager\\backend\\data\\models\\sensorreading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3E03917B-DB58-40F6-A196-57A4CCED5984}|..\\Services\\Services.csproj|c:\\maus\\programming\\microclimate manager\\backend\\services\\dashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{29077E94-C186-4962-A112-88E16CA7AC41}|..\\Data\\Data.csproj|c:\\maus\\programming\\microclimate manager\\backend\\data\\repositories\\sensorreadingsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EDAB60AD-C631-4EB3-A1C2-3C5A76132306}|..\\Shared\\Shared.csproj|c:\\maus\\programming\\microclimate manager\\backend\\shared\\dtos\\dashboard\\statisticsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EDAB60AD-C631-4EB3-A1C2-3C5A76132306}|..\\Shared\\Shared.csproj|c:\\maus\\programming\\microclimate manager\\backend\\shared\\dtos\\dashboard\\chartsdatadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EDAB60AD-C631-4EB3-A1C2-3C5A76132306}|..\\Shared\\Shared.csproj|c:\\maus\\programming\\microclimate manager\\backend\\shared\\dtos\\dashboard\\queryparamsstatisticsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -50,10 +58,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{EDAB60AD-C631-4EB3-A1C2-3C5A76132306}|..\\Shared\\Shared.csproj|c:\\maus\\programming\\microclimate manager\\backend\\shared\\dtos\\dashboard\\statistics\\temperaturestatisticsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|c:\\maus\\programming\\microclimate manager\\backend\\microclimate_manager api\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|solutionrelative:controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3E03917B-DB58-40F6-A196-57A4CCED5984}|..\\Services\\Services.csproj|c:\\maus\\programming\\microclimate manager\\backend\\services\\actuatorlogsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -91,10 +95,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{EDAB60AD-C631-4EB3-A1C2-3C5A76132306}|..\\Shared\\Shared.csproj|c:\\maus\\programming\\microclimate manager\\backend\\shared\\dtos\\actuatorlog\\actuatorlogreaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|c:\\maus\\programming\\microclimate manager\\backend\\microclimate_manager api\\controllers\\sensorreadingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ED562DFE-B9EF-5F88-771F-EBF333E4D08F}|API.csproj|solutionrelative:controllers\\sensorreadingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EDAB60AD-C631-4EB3-A1C2-3C5A76132306}|..\\Shared\\Shared.csproj|c:\\maus\\programming\\microclimate manager\\backend\\shared\\dtos\\actuatorlog\\actuatorlogsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -153,93 +153,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\appsettings.json*",
-              "RelativeToolTip": "appsettings.json*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-10-14T20:08:40.017Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MoistureStatisticsDto.cs",
-              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\Dashboard\\Statistics\\MoistureStatisticsDto.cs",
-              "RelativeDocumentMoniker": "..\\Shared\\DTOs\\Dashboard\\Statistics\\MoistureStatisticsDto.cs",
-              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\Dashboard\\Statistics\\MoistureStatisticsDto.cs",
-              "RelativeToolTip": "..\\Shared\\DTOs\\Dashboard\\Statistics\\MoistureStatisticsDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-12T12:39:42.826Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAACkAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-07T12:33:06.086Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "..\\Data\\AppDbContext.cs",
               "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Data\\AppDbContext.cs",
               "RelativeToolTip": "..\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBgAAAChAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-07T12:36:28.376Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-10-12T13:55:26.034Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SettingsService.cs",
-              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Services\\SettingsService.cs",
-              "RelativeDocumentMoniker": "..\\Services\\SettingsService.cs",
-              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Services\\SettingsService.cs",
-              "RelativeToolTip": "..\\Services\\SettingsService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-08T12:17:41.394Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SensorReading.cs",
-              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Data\\Models\\SensorReading.cs",
-              "RelativeDocumentMoniker": "..\\Data\\Models\\SensorReading.cs",
-              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Data\\Models\\SensorReading.cs",
-              "RelativeToolTip": "..\\Data\\Models\\SensorReading.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-07T12:42:33.024Z"
+              "WhenOpened": "2026-10-07T12:36:28.376Z"
             },
             {
               "$type": "Document",
@@ -251,24 +173,120 @@
               "RelativeToolTip": "appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-10-08T07:46:51.32Z",
+              "WhenOpened": "2026-10-08T07:46:51.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-14T20:08:40.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
+              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T09:13:20.794Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
+              "Title": "SensorReadingsController.cs",
+              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Controllers\\SensorReadingsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SensorReadingsController.cs",
+              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Controllers\\SensorReadingsController.cs",
+              "RelativeToolTip": "Controllers\\SensorReadingsController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-07T12:33:01.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "DashboardService.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Services\\DashboardService.cs",
               "RelativeDocumentMoniker": "..\\Services\\DashboardService.cs",
               "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Services\\DashboardService.cs",
               "RelativeToolTip": "..\\Services\\DashboardService.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAewDkAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAhwDoAAABoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-12T09:14:50.804Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-10-12T13:55:26.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SensorReading.cs",
+              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Data\\Models\\SensorReading.cs",
+              "RelativeDocumentMoniker": "..\\Data\\Models\\SensorReading.cs",
+              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Data\\Models\\SensorReading.cs",
+              "RelativeToolTip": "..\\Data\\Models\\SensorReading.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-07T12:42:33.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SettingsService.cs",
+              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Services\\SettingsService.cs",
+              "RelativeDocumentMoniker": "..\\Services\\SettingsService.cs",
+              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Services\\SettingsService.cs",
+              "RelativeToolTip": "..\\Services\\SettingsService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-08T12:17:41.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-07T12:33:06.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MoistureStatisticsDto.cs",
+              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\Dashboard\\Statistics\\MoistureStatisticsDto.cs",
+              "RelativeDocumentMoniker": "..\\Shared\\DTOs\\Dashboard\\Statistics\\MoistureStatisticsDto.cs",
+              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\Dashboard\\Statistics\\MoistureStatisticsDto.cs",
+              "RelativeToolTip": "..\\Shared\\DTOs\\Dashboard\\Statistics\\MoistureStatisticsDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-12T12:39:42.826Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "SensorReadingsRepository.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Data\\Repositories\\SensorReadingsRepository.cs",
               "RelativeDocumentMoniker": "..\\Data\\Repositories\\SensorReadingsRepository.cs",
@@ -280,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "ActuatorLog.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Data\\Models\\ActuatorLog.cs",
               "RelativeDocumentMoniker": "..\\Data\\Models\\ActuatorLog.cs",
@@ -292,19 +310,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "StatisticsDto.cs",
-              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\Dashboard\\StatisticsDto.cs",
-              "RelativeDocumentMoniker": "..\\Shared\\DTOs\\Dashboard\\StatisticsDto.cs",
-              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\Dashboard\\StatisticsDto.cs",
-              "RelativeToolTip": "..\\Shared\\DTOs\\Dashboard\\StatisticsDto.cs",
+              "DocumentIndex": 13,
+              "Title": "ChartsDataDto.cs",
+              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\Dashboard\\ChartsDataDto.cs",
+              "RelativeDocumentMoniker": "..\\Shared\\DTOs\\Dashboard\\ChartsDataDto.cs",
+              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\Dashboard\\ChartsDataDto.cs",
+              "RelativeToolTip": "..\\Shared\\DTOs\\Dashboard\\ChartsDataDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-12T12:34:31.686Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "QueryParamsStatisticsDto.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\Dashboard\\QueryParamsStatisticsDto.cs",
               "RelativeDocumentMoniker": "..\\Shared\\DTOs\\Dashboard\\QueryParamsStatisticsDto.cs",
@@ -316,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "SeedData.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Data\\SeedData.cs",
               "RelativeDocumentMoniker": "..\\Data\\SeedData.cs",
@@ -328,7 +346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "TemperatureStatisticsDto.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\Dashboard\\Statistics\\TemperatureStatisticsDto.cs",
               "RelativeDocumentMoniker": "..\\Shared\\DTOs\\Dashboard\\Statistics\\TemperatureStatisticsDto.cs",
@@ -340,19 +358,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "DashboardController.cs",
-              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Controllers\\DashboardController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
-              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Controllers\\DashboardController.cs",
-              "RelativeToolTip": "Controllers\\DashboardController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAABpAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-12T09:13:20.794Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ActuatorLogsService.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Services\\ActuatorLogsService.cs",
               "RelativeDocumentMoniker": "..\\Services\\ActuatorLogsService.cs",
@@ -364,7 +370,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "ActuatorLogsRepository.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Data\\Repositories\\ActuatorLogsRepository.cs",
               "RelativeDocumentMoniker": "..\\Data\\Repositories\\ActuatorLogsRepository.cs",
@@ -376,7 +382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "SensorReadingsService.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Services\\SensorReadingsService.cs",
               "RelativeDocumentMoniker": "..\\Services\\SensorReadingsService.cs",
@@ -388,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "HeaterStatisticsDto.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\Dashboard\\Statistics\\HeaterStatisticsDto.cs",
               "RelativeDocumentMoniker": "..\\Shared\\DTOs\\Dashboard\\Statistics\\HeaterStatisticsDto.cs",
@@ -400,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "SettingsController.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Controllers\\SettingsController.cs",
               "RelativeDocumentMoniker": "Controllers\\SettingsController.cs",
@@ -412,7 +418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "SettingsRepository.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Data\\Repositories\\SettingsRepository.cs",
               "RelativeDocumentMoniker": "..\\Data\\Repositories\\SettingsRepository.cs",
@@ -424,7 +430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "SettingDto.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\Setting\\SettingDto.cs",
               "RelativeDocumentMoniker": "..\\Shared\\DTOs\\Setting\\SettingDto.cs",
@@ -436,7 +442,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "LatestDataDto.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\Dashboard\\LatestDataDto.cs",
               "RelativeDocumentMoniker": "..\\Shared\\DTOs\\Dashboard\\LatestDataDto.cs",
@@ -448,7 +454,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "PumpStatisticsDto.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\Dashboard\\Statistics\\PumpStatisticsDto.cs",
               "RelativeDocumentMoniker": "..\\Shared\\DTOs\\Dashboard\\Statistics\\PumpStatisticsDto.cs",
@@ -460,7 +466,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "FanStatisticsDto.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\Dashboard\\Statistics\\FanStatisticsDto.cs",
               "RelativeDocumentMoniker": "..\\Shared\\DTOs\\Dashboard\\Statistics\\FanStatisticsDto.cs",
@@ -472,7 +478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "HumidityStatisticsDto.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\Dashboard\\Statistics\\HumidityStatisticsDto.cs",
               "RelativeDocumentMoniker": "..\\Shared\\DTOs\\Dashboard\\Statistics\\HumidityStatisticsDto.cs",
@@ -485,18 +491,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 28,
-              "Title": "SensorReadingsController.cs",
-              "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Controllers\\SensorReadingsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\SensorReadingsController.cs",
-              "ToolTip": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\Controllers\\SensorReadingsController.cs",
-              "RelativeToolTip": "Controllers\\SensorReadingsController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwBoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-07T12:33:01.367Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
               "Title": "ActuatorLogReadDto.cs",
               "DocumentMoniker": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Shared\\DTOs\\ActuatorLog\\ActuatorLogReadDto.cs",
               "RelativeDocumentMoniker": "..\\Shared\\DTOs\\ActuatorLog\\ActuatorLogReadDto.cs",

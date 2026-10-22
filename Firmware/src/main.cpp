@@ -1,16 +1,17 @@
 #include <Arduino.h>
-#include <Adafruit_Sensor.h>
-#include <DHT.h>
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <ArduinoJson.h>
+#include <Wire.h>
+#include <Adafruit_AM2320.h>
 
 const char* ssid     = "Odido-91398C";
 const char* password = "8EAT4F7P7N7Q7UDH";
 const char* serverUrl = "https://i594226.luna.fhict.nl/api";
 
-#define DHTPIN 33
-#define DHTTYPE DHT11
+// const char* ssid     = "H770";
+// const char* password = "123456789";
+// const char* serverUrl = "http://192.168.137.1:5029/api";
 
 #define moistureSensor 32
 
@@ -18,15 +19,15 @@ const char* serverUrl = "https://i594226.luna.fhict.nl/api";
 #define fan 26
 #define heater 27
 
-DHT dht(DHTPIN, DHTTYPE);
+Adafruit_AM2320 am2320 = Adafruit_AM2320();
 
 const unsigned long READ_DATA_INTERVAL = 2000; 
 const unsigned long CHECK_RANGES_INTERVAL = 60000; 
 const unsigned long CLIMATE_CONTROL_INTERVAL = 10000;   
 const unsigned long SEND_DATA_INTERVAL = 60000;   
-const unsigned long SOIL_CHECK_INTERVAL = 10000;
-const unsigned long PUMP_RUN_TIME = 5000;  // watering for 5 seconds
-const unsigned long SOAKING_TIME = 60000; // waiting for water soak for 1 minute
+const unsigned long SOIL_CHECK_INTERVAL = 60 * 60 * 1000UL; // 1 hour (60 minutes)
+const unsigned long PUMP_RUN_TIME = 5000;                  // 5 seconds
+const unsigned long SOAKING_TIME = 60 * 60 * 1000UL;        // 1 hour
 
 unsigned long previousDataReadTimer = 0;
 unsigned long previousCheckRangesTimer = 0;
@@ -40,7 +41,7 @@ int moistureWetValue = 1515; // 100% wet
 
 float temperatureMin = 18; 
 float temperatureMax = 24; 
-
+float tempOffset = 1.2;
 float humidityMin = 60; 
 float humidityMax = 90; 
 
@@ -68,12 +69,12 @@ void readData(){
 
   if (currentMillis - previousDataReadTimer >= READ_DATA_INTERVAL) {
     previousDataReadTimer = currentMillis;
-    float temperature = dht.readTemperature();
+    float temperature = am2320.readTemperature();
     if (!isnan(temperature)) {
       temperatureArray[currentIndex] = temperature;
     }
   
-    float humidity = dht.readHumidity();
+    float humidity = am2320.readHumidity();
     if (!isnan(humidity)) {
       humidityArray[currentIndex] = humidity;
     } 
@@ -82,7 +83,7 @@ void readData(){
     int moisture = map(moistureRawData, moistureWetValue, moistureDryValue, 100, 0);
     moisture = constrain(moisture, 0, 100);
     moistureArray[currentIndex] = moisture;
-    Serial.println(String(moistureRawData) + " - " + String(moisture));
+    
     currentIndex = (currentIndex + 1) % arraySize;
     if(readingsCount < arraySize) readingsCount++;
   }
@@ -108,12 +109,12 @@ float getAverage(float array[], int count){
   return average;
 }
 
-void sendSensorData(){
+void  sendSensorData(){
   unsigned long currentMillis = millis();
   
   if (currentMillis - previousDataSendTimer >= SEND_DATA_INTERVAL) {
     previousDataSendTimer = currentMillis;
-    float temperatureAverage = getAverage(temperatureArray, arraySize);
+    float temperatureAverage = getAverage(temperatureArray, arraySize) - tempOffset;
     float humidityAverage = getAverage(humidityArray, arraySize);
     float moistureAverage = getAverage(moistureArray, arraySize);
     
@@ -380,7 +381,7 @@ void setup() {
   }
   Serial.println("Connected!");
 
-  dht.begin();
+  am2320.begin();
   sendActuatorData("heater", 0);
   sendActuatorData("fan", 0);
   sendActuatorData("pump", 0);

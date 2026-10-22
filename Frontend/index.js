@@ -366,10 +366,10 @@ function renderMoistureChart(values, minDate, maxDate, minY, maxY) {
         x: {
           type: 'time',
           time: {
-            unit: 'day',
+            unit: 'hour',
             displayFormats: {
-              day: 'MMM dd',
-              hour: 'MMM dd, HH:mm'
+              hour: 'HH:mm',
+              day: 'MMM dd, HH:mm'
             }
           },
           min: minDate,
@@ -456,12 +456,12 @@ function renderCombinedChart(tempValues, humidityValues, minDate, maxDate, minTe
         x: {
           type: 'time',
           time: {
-            unit: 'day',
+            unit: 'hour',
             displayFormats: {
-              day: 'MMM dd',
-              hour: 'MMM dd, HH:mm'
+              hour: 'HH:mm',
+              day: 'MMM dd, HH:mm'
             }
-          },
+          } ,
           min: minDate,
           max: maxDate,
           display: true,

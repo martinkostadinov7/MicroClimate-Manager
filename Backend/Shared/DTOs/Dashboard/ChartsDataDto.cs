@@ -2,11 +2,11 @@
 
 namespace Shared.DTOs.Dashboard
 {
-    public class StatisticsDto
+    public class ChartsDataDto
     {
-        public List<TemperatureStatisticsDto> Temperature { get; set; }
-        public List<HumidityStatisticsDto> Humidity { get; set; }
-        public List<MoistureStatisticsDto> Moisture { get; set; }
+        public List<TemperatureRecordDto> Temperature { get; set; }
+        public List<HumidityRecordDto> Humidity { get; set; }
+        public List<MoistureRecordDto> Moisture { get; set; }
 
         public List<HeaterStatisticsDto> Heater { get; set; }
         //public List<FanStatisticsDto> Fan { get; set; }

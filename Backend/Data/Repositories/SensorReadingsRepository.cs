@@ -39,45 +39,111 @@ namespace Data.Repositories
 
             return latestSensorReading;
         }
-        public async Task<List<TemperatureStatisticsDto>> GetTemperatureStatsAsync(DateTime from, DateTime to)
+        public async Task<List<TemperatureRecordDto>> GetTemperatureRecordsAsync(DateTime from, DateTime to, int targetPointsCount = 1300)
         {
-            var readings = await db.SensorReadings
+            var totalDuration = to - from;
+
+            if (totalDuration.TotalSeconds <= 0)
+                return new List<TemperatureRecordDto>();
+
+            double windowSeconds = totalDuration.TotalSeconds / targetPointsCount;
+           
+            if (windowSeconds < 1)
+            {
+                return await db.SensorReadings
+                    .Where(s => s.CreatedAt >= from && s.CreatedAt <= to)
+                    .OrderBy(s => s.CreatedAt)
+                    .Select(s => new TemperatureRecordDto
+                    {
+                        DateTime = s.CreatedAt,
+                        Temperature = s.Temperature
+                    })
+                    .ToListAsync();
+            }
+
+            var result = await db.SensorReadings
                 .Where(s => s.CreatedAt >= from && s.CreatedAt <= to)
-                .OrderBy(s => s.CreatedAt)
+                .GroupBy(s => (int)EF.Functions.DateDiffSecond(from, s.CreatedAt) / (int)windowSeconds)
+                .Select(g => new TemperatureRecordDto
+                {
+                    DateTime = g.Min(s => s.CreatedAt),
+                    Temperature = g.Average(s => s.Temperature)
+                })
+                .OrderBy(s => s.DateTime)
                 .ToListAsync();
 
-            return readings.Select(s => new TemperatureStatisticsDto
-            {
-                DateTime = s.CreatedAt,
-                Temperature = s.Temperature
-            }).ToList();
+            return result;
         }
-        public async Task<List<HumidityStatisticsDto>> GetHumidityStatsAsync(DateTime from, DateTime to)
+        public async Task<List<HumidityRecordDto>> GetHumidityRecordsAsync(DateTime from, DateTime to, int targetPointsCount = 1300)
         {
-            var readings = await db.SensorReadings
+            var totalDuration = to - from;
+
+            if (totalDuration.TotalSeconds <= 0)
+                return new List<HumidityRecordDto>();
+
+            double windowSeconds = totalDuration.TotalSeconds / targetPointsCount;
+
+            if (windowSeconds < 1)
+            {
+                return await db.SensorReadings
+                    .Where(s => s.CreatedAt >= from && s.CreatedAt <= to)
+                    .OrderBy(s => s.CreatedAt)
+                    .Select(s => new HumidityRecordDto
+                    {
+                        DateTime = s.CreatedAt,
+                        Humidity = s.Humidity
+                    })
+                    .ToListAsync();
+            }
+
+            var result = await db.SensorReadings
                 .Where(s => s.CreatedAt >= from && s.CreatedAt <= to)
-                .OrderBy(s => s.CreatedAt)
+                .GroupBy(s => (int)EF.Functions.DateDiffSecond(from, s.CreatedAt) / (int)windowSeconds)
+                .Select(g => new HumidityRecordDto
+                {
+                    DateTime = g.Min(s => s.CreatedAt),
+                    Humidity = g.Average(s => s.Humidity)
+                })
+                .OrderBy(s => s.DateTime)
                 .ToListAsync();
 
-            return readings.Select(s => new HumidityStatisticsDto
-            {
-                DateTime = s.CreatedAt,
-                Humidity = s.Humidity
-            }).ToList();
+            return result;
         }
 
-        public async Task<List<MoistureStatisticsDto>> GetMoistureStatsAsync(DateTime from, DateTime to)
+        public async Task<List<MoistureRecordDto>> GetMoistureRecordsAsync(DateTime from, DateTime to, int targetPointsCount = 1300)
         {
-            var readings = await db.SensorReadings
+            var totalDuration = to - from;
+
+            if (totalDuration.TotalSeconds <= 0)
+                return new List<MoistureRecordDto>();
+
+            double windowSeconds = totalDuration.TotalSeconds / targetPointsCount;
+
+            if (windowSeconds < 1)
+            {
+                return await db.SensorReadings
+                    .Where(s => s.CreatedAt >= from && s.CreatedAt <= to)
+                    .OrderBy(s => s.CreatedAt)
+                    .Select(s => new MoistureRecordDto
+                    {
+                        DateTime = s.CreatedAt,
+                        Moisture = s.SoilMoisture
+                    })
+                    .ToListAsync();
+            }
+
+            var result = await db.SensorReadings
                 .Where(s => s.CreatedAt >= from && s.CreatedAt <= to)
-                .OrderBy(s => s.CreatedAt)
+                .GroupBy(s => (int)EF.Functions.DateDiffSecond(from, s.CreatedAt) / (int)windowSeconds)
+                .Select(g => new MoistureRecordDto
+                {
+                    DateTime = g.Min(s => s.CreatedAt),
+                    Moisture = g.Average(s => s.SoilMoisture)
+                })
+                .OrderBy(s => s.DateTime)
                 .ToListAsync();
 
-            return readings.Select(s => new MoistureStatisticsDto
-            {
-                DateTime = s.CreatedAt,
-                Moisture = s.SoilMoisture
-            }).ToList();
+            return result;
         }
     }
 }
