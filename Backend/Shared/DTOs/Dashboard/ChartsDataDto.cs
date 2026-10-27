@@ -2,7 +2,7 @@ using Shared.DTOs.Dashboard.Statistics;
 
 namespace Shared.DTOs.Dashboard
 {
-    public class StatisticsDto
+    public class ChartsDataDto
     {
         public double TemperatureLowest { get; set; }
         public double TemperatureHighest { get; set; }
