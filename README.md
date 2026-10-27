@@ -2,8 +2,6 @@
 
 **MicroClimate Manager** is an automated IoT solution designed for greenhouse owners to seamlessly regulate soil moisture and climate control. By utilizing smart irrigation, heating, and ventilation, this system tackles the common challenges of maintaining optimal environmental levels, providing all real-time data through an interactive web application.
 
-For a detailed breakdown of the development process, hardware wiring, and architectural choices, please refer to the `Realisation.docx` file included in this repository.
-
 ## Features
 
 * **Real-Time Environmental Monitoring**: Tracks temperature, humidity, and soil moisture using hardware sensors.
