@@ -5,17 +5,9 @@
 #include <Wire.h>
 #include <Adafruit_AM2320.h>
 
-// const char* ssid     = "Odido-91398C";
-// const char* password = "8EAT4F7P7N7Q7UDH";
-// const char* serverUrl = "https://i594226.luna.fhict.nl/api";
-
-const char* ssid     = "MLaptop";
-const char* password = "parola123";
-const char* serverUrl = "https://192.168.137.1:5029/api";
-
-// const char* ssid     = "H770";
-// const char* password = "123456789";
-// const char* serverUrl = "http://192.168.137.1:5029/api";
+const char* ssid     = "Odido-91398C";
+const char* password = "8EAT4F7P7N7Q7UDH";
+const char* serverUrl = "https://i594226.luna.fhict.nl/api";
 
 #define moistureSensor 32
 
