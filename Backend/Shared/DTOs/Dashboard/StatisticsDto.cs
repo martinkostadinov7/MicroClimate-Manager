@@ -1,15 +1,17 @@
-﻿using Shared.DTOs.Dashboard.Statistics;
+using Shared.DTOs.Dashboard.Statistics;
 
 namespace Shared.DTOs.Dashboard
 {
     public class StatisticsDto
     {
-        public List<TemperatureStatisticsDto> Temperature { get; set; }
-        public List<HumidityStatisticsDto> Humidity { get; set; }
-        public List<MoistureStatisticsDto> Moisture { get; set; }
-
-        public List<HeaterStatisticsDto> Heater { get; set; }
-        //public List<FanStatisticsDto> Fan { get; set; }
-        //public List<PumpStatisticsDto> Pump { get; set; }
+        public double TemperatureLowest { get; set; }
+        public double TemperatureHighest { get; set; }
+        public double TemperatureAverage { get; set; }
+        public double HumidityLowest { get; set; }
+        public double HumidityHighest { get; set; }
+        public double HumidityAverage { get; set; }
+        public double MoistureLowest { get; set; }
+        public double MoistureHighest { get; set; }
+        public double MoistureAverage { get; set; }
     }
 }

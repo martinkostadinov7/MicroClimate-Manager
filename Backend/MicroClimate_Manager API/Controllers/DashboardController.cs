@@ -16,10 +16,17 @@ namespace API.Controllers
             return Ok(data);
         }
         
-        [HttpGet("statistics")]
-        public async Task<ActionResult<StatisticsDto>> GetStatistics([FromQuery] QueryParamsStatisticsDto queryParamsStatisticsDto)
+        [HttpGet("chartData")]
+        public async Task<ActionResult<ChartDataDto>> GetChartData([FromQuery] QueryParamsChartDataDto queryParamsChartDataDto)
         {
-            var data = await dashboardService.GetStatisticsAsync(queryParamsStatisticsDto);
+            var data = await dashboardService.GetChartDataAsync(queryParamsChartDataDto);
+            return Ok(data);
+        }
+
+        [HttpGet("statistics")]
+        public async Task<ActionResult<StatisticsDto>> GetStatistics()
+        {
+            var data = await dashboardService.GetStatisticsAsync();
             return Ok(data);
         }
     }

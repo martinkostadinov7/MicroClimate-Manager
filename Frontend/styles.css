@@ -30,13 +30,12 @@ body {
     max-width: 800px;
 }
 
-
 .dataContainer {
     background: #ffffff;
     border: 2px solid #e0e0e0;
     border-radius: 16px;
     padding: 1.5rem;
-    flex: 1 1 320px; /* Минимална ширина 320px преди да се пренареди */
+    flex: 1 1 320px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -60,6 +59,7 @@ body {
     align-items: center;
     padding: 0.75rem 0;
     border-bottom: 1px dashed #eee;
+    gap: 0.5rem;
 }
 
 .inline:last-child {
@@ -73,8 +73,9 @@ body {
 
 .value {
     font-weight: bold;
-    color: #2e7d32; /* Модерен зелен цвят за стойностите */
+    color: #2e7d32;
     font-size: 1.1rem;
+    text-align: right;
 }
 
 .footerContainer {
@@ -101,24 +102,27 @@ body {
     margin: 1rem;
 }
 
-#refreshButton{
+#refreshButton {
     background-color: #2e7d32;
 }
 
 #refreshButton:hover {
     background-color: #256628;
 }
-#settingsButton{
+
+#settingsButton {
     background-color: #787878;
 }
 
-#settingsButton:hover{
+#settingsButton:hover {
     background-color: #636363;
 }
 
-#saveButton{
+#saveButton {
     background-color: #2e7d32;
-    margin-bottom: 0;
+    margin: 1.5rem 0 0 0;
+    width: 100%;
+    display: block;
 }
 
 #saveButton:hover {
@@ -137,14 +141,11 @@ body {
     margin: 1.5rem auto 0.5rem auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-    justify-content: center;
-    align-items: flex-end; /* Подравнява бутона спрямо дъното на инпутите */
+    flex-direction: column;
+    gap: 1rem;
     max-width: 650px;
     width: 100%;
 }
-
 #applyFilterButton {
     background-color: #2e7d32;
     margin: 0;
@@ -154,21 +155,6 @@ body {
 
 #applyFilterButton:hover {
     background-color: #256628;
-}
-
-.datePickerCard .input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    flex: 1 1 200px;
-}
-
-.datePickerCard .input-group label {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #4a5568;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
 .datePickerCard .input-group input[type="datetime-local"] {
@@ -195,40 +181,21 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
     transition: opacity 0.2s;
 }
 
-input[type="number"]{
+input[type="number"] {
     cursor: pointer;
     opacity: 0.65;
     transition: opacity 0.2s;
-    width: 50px;
+    width: 60px;
 }
 
 input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
     opacity: 1;
 }
 
-@media (max-width: 600px) {
-    body {
-        padding: 1rem;
-    }
-
-    .latestDataContainer {
-        flex-direction: column; 
-    }
-
-    .dataContainer {
-        width: 100%;
-    }
-
-    .datePickerCard {
-        flex-direction: column;
-        gap: 1rem;
-    }
-}
-
 /* Контейнер за графиките */
 .chartsContainer {
     display: flex;
-    flex-wrap: wrap; /* Позволява преминаване на нов ред */
+    flex-wrap: wrap;
     gap: 1.5rem;
     justify-content: center;
     width: 100%;
@@ -241,11 +208,11 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
     background: #ffffff;
     border: 2px solid #e0e0e0;
     border-radius: 16px;
-    padding: 1rem;
+    padding: 1rem 1rem 2.5rem 1rem; /* Увеличаваме долния padding на 2rem, за да има място за етикетите */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    width: 90%;
+    width: 100%;
     box-sizing: border-box;
-    height: 350px;
+    height: 400px; /* Увеличаваме леко общата височина от 350px на 380px */
 }
 
 .chartCard h3 {
@@ -255,14 +222,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
     text-align: center;
 }
 
-/* За мобилни устройства */
-@media (max-width: 768px) {
-    .chartCard {
-        flex: 1 1 100%; /* На малък екран всяка графика заема пълната ширина */
-    }
-}
-
-/* Двете отделни кутии с заоблени ъгли */
+/* Настройки (settings.html) кутия */
 .container {
     background: #ffffff;
     border: 2px solid #e0e0e0;
@@ -270,40 +230,177 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
     padding: 1.5rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    width: 400px;
+    max-width: 450px;
+    width: 100%;
     text-align: center;
 }
 
-.container h2{
+.container h2 {
     text-align: center;
+    color: #287d2b;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
 }
 
 .range-inputs {
-  display: flex;
-  align-items: flex-end;
-  gap: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.range-inputs {
-  display: flex;
-  align-items: flex-end;
-  gap: 8px;
+.range-inputs .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.input-group {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.range-inputs .input-group label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 2px;
 }
 
-.input-group label {
-  font-size: 12px;
-  color: #666;
-  margin-bottom: 2px;
+.range-inputs .input-group input {
+    width: 65px;
+    padding: 6px;
+    text-align: center;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
 }
 
-.input-group input {
-  width: 60px;
-  padding: 5px;
-  text-align: center;
+/* МОБИЛНА ОПТИМИЗАЦИЯ (Media Queries) */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+
+    #title {
+        font-size: 1.7rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .latestDataContainer {
+        flex-direction: column; 
+    }
+
+    .dataContainer {
+        width: 100%;
+        padding: 1.2rem;
+    }
+
+    /* При по-дълги текстове като Min / Avg / Max редовете се пренасят чисто */
+    .inline {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    .value {
+        text-align: left;
+    }
+
+    .datePickerCard {
+        padding: 1rem;
+    }
+
+    .datePickerCard .filterFields {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+    }
+
+    #applyFilterButton {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    .chartCard {
+        height: 280px; /* Малко по-компактна височина за малки екрани */
+        padding: 0.75rem 0.5rem;
+    }
+
+    .container {
+        padding: 1.2rem;
+    }
+
+    .container .inline {
+        flex-direction: row; /* Запазваме текста и инпутите един до друг при Settings */
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* Базов стил за картата на филтъра */
+.datePickerCard {
+    background: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 1.25rem 1.75rem;
+    margin: 1.5rem auto 0.5rem auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 650px;
+    width: 100%;
+}
+
+.datePickerCard h2 {
+    font-size: 1.2rem;
+    color: #287d2b;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+    text-align: left;
+    margin: 0;
+}
+
+.datePickerCard .filterFields {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Фиксиран малък интервал между инпутите */
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.datePickerCard .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    flex: 1 1 200px;
+    margin: 0; /* Премахваме излишните външни маржини */
+}
+
+#applyFilterButton {
+    background-color: #2e7d32;
+    margin: 0;
+    padding: 0.6rem 1.4rem;
+    height: 40px;
+}
+
+
+/* МОБИЛНА ОПТИМИЗАЦИЯ */
+@media (max-width: 600px) {
+    .datePickerCard {
+        padding: 1rem;
+        gap: 0.75rem; /* Компактен интервал под заглавието */
+    }
+
+    .datePickerCard .filterFields {
+        flex-direction: column;
+        align-items: stretch; /* Полетата заема цялата ширина */
+        gap: 0.75rem; /* Равномерен и близък интервал между инпутите и бутона */
+    }
+
+    .datePickerCard .input-group {
+        width: 100%;
+        flex: none;
+    }
+
+    #applyFilterButton {
+        width: 100%;
+        margin-top: 0.25rem;
+        height: 44px; /* Удобна височина за кликване с пръст */
+    }
 }

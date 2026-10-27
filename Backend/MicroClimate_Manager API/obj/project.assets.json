@@ -1489,23 +1489,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\H770\\.nuget\\packages\\": {},
+    "C:\\Users\\User\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\API.csproj",
+      "projectUniqueName": "D:\\Projects\\MicroClimateManager\\Repository\\Backend\\MicroClimate_Manager API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\API.csproj",
-      "packagesPath": "C:\\Users\\H770\\.nuget\\packages\\",
-      "outputPath": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\MicroClimate_Manager API\\obj\\",
+      "projectPath": "D:\\Projects\\MicroClimateManager\\Repository\\Backend\\MicroClimate_Manager API\\API.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "D:\\Projects\\MicroClimateManager\\Repository\\Backend\\MicroClimate_Manager API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\H770\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1521,8 +1521,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Services\\Services.csproj": {
-              "projectPath": "C:\\Maus\\Programming\\MicroClimate Manager\\Backend\\Services\\Services.csproj"
+            "D:\\Projects\\MicroClimateManager\\Repository\\Backend\\Services\\Services.csproj": {
+              "projectPath": "D:\\Projects\\MicroClimateManager\\Repository\\Backend\\Services\\Services.csproj"
             }
           }
         }
@@ -1584,7 +1584,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.402/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
@@ -2001,5 +2001,27 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Security.Cryptography.Pkcs' 9.0.11 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-2fmv-rv2c-59x7",
+      "libraryId": "System.Security.Cryptography.Pkcs",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Security.Cryptography.Pkcs' 9.0.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-846f-f764-76mx",
+      "libraryId": "System.Security.Cryptography.Pkcs",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }

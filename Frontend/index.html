@@ -16,15 +16,15 @@
       <div class="dataContainer">
         <h2>Environment data</h2>
         <div class="inline">
-          <p>Temperature</p>
+          <p>Temperature, °C</p>
           <p class="value" id="temperature">--</p>
         </div>
         <div class="inline">
-          <p>Humidity</p>
+          <p>Humidity, %RH</p>
           <p class="value" id="humidity">--</p>
         </div>
         <div class="inline">
-          <p>Moisture</p>
+          <p>Moisture, %</p>
           <p class="value" id="moisture">--</p>
         </div>
       </div>  
@@ -51,16 +51,43 @@
       <button id="refreshButton" class="button" onclick="getData()">Refresh</button>
     </div>
 
+    <div class="latestDataContainer" style="margin-top: 1rem;">
+      <div class="dataContainer">
+        <h2>24-Hour Statistics</h2>
+        <div class="inline">
+          <p>Temperature (Min / Avg / Max)</p>
+          <p class="value">
+            <span id="tempMin">--</span> / <span id="tempAvg">--</span> / <span id="tempMax">--</span> °C
+          </p>
+        </div>
+        <div class="inline">
+          <p>Humidity (Min / Avg / Max)</p>
+          <p class="value">
+            <span id="humMin">--</span> / <span id="humAvg">--</span> / <span id="humMax">--</span> %RH
+          </p>
+        </div>
+        <div class="inline">
+          <p>Moisture (Min / Avg / Max)</p>
+          <p class="value">
+            <span id="moistMin">--</span> / <span id="moistAvg">--</span> / <span id="moistMax">--</span> %
+          </p>
+        </div>
+      </div>  
+    </div>
+
     <div class="datePickerCard">
-      <div class="input-group">
-        <label for="dateFrom">From</label>
-        <input type="datetime-local" id="dateFrom" name="from">
+      <h2>History Filter</h2>
+      <div class="filterFields">
+        <div class="input-group">
+          <label for="dateFrom">From</label>
+          <input type="datetime-local" id="dateFrom" name="from">
+        </div>
+        <div class="input-group">
+          <label for="dateTo">To</label>
+          <input type="datetime-local" id="dateTo" name="to">
+        </div>
+        <button id="applyFilterButton" class="button">Apply</button>
       </div>
-      <div class="input-group">
-        <label for="dateTo">To</label>
-        <input type="datetime-local" id="dateTo" name="to">
-      </div>
-      <button id="applyFilterButton" class="button">Apply</button>
     </div>
 
    <div class="chartsContainer">

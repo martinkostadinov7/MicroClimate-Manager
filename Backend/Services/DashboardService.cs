@@ -49,21 +49,27 @@ namespace Services
                 CreatedAt = log.CreatedAt
             };
         }
-        public async Task<StatisticsDto> GetStatisticsAsync(QueryParamsStatisticsDto queryParams)
+        public async Task<ChartDataDto> GetChartDataAsync(QueryParamsChartDataDto queryParams)
         {
             DateTime from = queryParams.From;
             DateTime to = queryParams.To;
-            List<TemperatureStatisticsDto> temperatureStatisticsDtos = await sensorReadingsRepository.GetTemperatureStatsAsync(from, to);
-            List<HumidityStatisticsDto> humidityStatisticsDtos = await sensorReadingsRepository.GetHumidityStatsAsync(from, to);
-            List<MoistureStatisticsDto> moistureStatisticsDtos = await sensorReadingsRepository.GetMoistureStatsAsync(from, to);
-            List<HeaterStatisticsDto> heaterStatisticsDtos = await actuatorLogsRepository.GetHeaterStatsAsync(from, to);
-            StatisticsDto statisticsDto = new StatisticsDto
+            int pointsCount = queryParams.PointsCount;
+
+            List<TemperatureChartDataDto> temperatureChartDataDtos = await sensorReadingsRepository.GetTemperatureChartDataAsync(from, to, pointsCount);
+            List<HumidityChartDataDto> humidityChartDataDtos = await sensorReadingsRepository.GetHumidityChartDataAsync(from, to, pointsCount);
+            List<MoistureChartDataDto> moistureChartDataDtos = await sensorReadingsRepository.GetMoistureChartDataAsync(from, to, pointsCount);
+            ChartDataDto chartDataDto = new()
             {
-                Temperature = temperatureStatisticsDtos,
-                Humidity = humidityStatisticsDtos,
-                Moisture = moistureStatisticsDtos,
-                Heater = heaterStatisticsDtos,
+                Temperature = temperatureChartDataDtos,
+                Humidity = humidityChartDataDtos,
+                Moisture = moistureChartDataDtos
             };
+            return chartDataDto;
+        }
+
+        public async Task<StatisticsDto> GetStatisticsAsync()
+        {
+            StatisticsDto statisticsDto = await sensorReadingsRepository.GetStatisticsAsync();
             return statisticsDto;
         }
     }

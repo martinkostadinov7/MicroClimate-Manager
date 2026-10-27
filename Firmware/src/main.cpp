@@ -5,9 +5,13 @@
 #include <HTTPClient.h>
 #include <ArduinoJson.h>
 
-const char* ssid     = "Odido-91398C";
-const char* password = "8EAT4F7P7N7Q7UDH";
-const char* serverUrl = "https://i594226.luna.fhict.nl/api";
+// const char* ssid     = "Odido-91398C";
+// const char* password = "8EAT4F7P7N7Q7UDH";
+// const char* serverUrl = "https://i594226.luna.fhict.nl/api";
+
+const char* ssid     = "MLaptop";
+const char* password = "parola123";
+const char* serverUrl = "https://192.168.137.1:5029/api";
 
 #define DHTPIN 33
 #define DHTTYPE DHT11
@@ -42,7 +46,7 @@ float temperatureMin = 18;
 float temperatureMax = 24; 
 
 float humidityMin = 60; 
-float humidityMax = 90; 
+float humidityMax = 80; 
 
 float moistureMin = 30; 
 float moistureMax = 70; 
@@ -384,8 +388,7 @@ void setup() {
   sendActuatorData("heater", 0);
   sendActuatorData("fan", 0);
   sendActuatorData("pump", 0);
- retreiveLatestSettings();
-   
+  retreiveLatestSettings();
 }
 
 void loop() {

@@ -22,7 +22,7 @@ namespace Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
-                optionsBuilder.UseSqlServer("Server=DESKTOP-U242LRB\\SQLEXPRESS;Database=MicroClimateManager;Trusted_Connection=true;TrustServerCertificate=true;");
+                optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=MicroClimateManager;Trusted_Connection=true;TrustServerCertificate=true;");
             base.OnConfiguring(optionsBuilder);
         }
 
