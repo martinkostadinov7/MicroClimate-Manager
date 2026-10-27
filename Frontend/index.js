@@ -1,5 +1,5 @@
 async function getData() {
-    const url = "http://192.168.137.1:5029/api/dashboard/latestData";
+    const url = "https://i594226.luna.fhict.nl/api/dashboard/latestData";
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -44,7 +44,7 @@ async function getData() {
 
   // Нова функция за 24h статистиката
   async function get24HourStatistics() {
-    const url = "http://192.168.137.1:5029/api/dashboard/statistics";
+    const url = "https://i594226.luna.fhict.nl/api/dashboard/statistics";
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -154,7 +154,7 @@ async function getData() {
   }
 
   async function loadDashboardCharts(fromDate, toDate) {
-    const url = `http://192.168.137.1:5029/api/dashboard/chartData?from=${encodeURIComponent(fromDate)}&to=${encodeURIComponent(toDate)}&pointsCount=500`;
+    const url = `https://i594226.luna.fhict.nl/api/dashboard/chartData?from=${encodeURIComponent(fromDate)}&to=${encodeURIComponent(toDate)}&pointsCount=500`;
     console.log(fromDate);
     console.log(toDate);
     try {
