@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', loadSettings);
 
 async function loadSettings() {
-  const apiUrl = 'http://192.168.137.1:5029/api/settings';
+  const apiUrl = 'https://i594226.luna.fhict.nl/api/settings';
 
   const settingToInputId = {
     'TemperatureMin': 'tempMin',
@@ -38,7 +38,7 @@ async function loadSettings() {
 }
 
 async function saveSettings() {
-  const apiUrl = 'http://192.168.137.1:5029/api/settings';
+  const apiUrl = 'https://i594226.luna.fhict.nl/api/settings';
   const saveButton = document.getElementById('saveButton');
 
   const tempMinVal = document.getElementById('tempMin').value;
