@@ -316,8 +316,9 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
     }
 
     .chartCard {
-        height: 280px; /* Малко по-компактна височина за малки екрани */
-        padding: 0.75rem 0.5rem;
+        position: relative;
+        height: 340px; /* Увеличено от 280px, за да има място за завъртяните етикети */
+        padding: 1rem 0.75rem 2.5rem 0.75rem;
     }
 
     .container {
@@ -402,5 +403,60 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover {
         width: 100%;
         margin-top: 0.25rem;
         height: 44px; /* Удобна височина за кликване с пръст */
+    }
+}
+
+.datePickerCard .input-group input[type="number"] {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.95rem;
+    color: #2d3748;
+    background-color: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Ефект при фокус върху полето */
+.datePickerCard .input-group input[type="number"]:focus {
+    border-color: #2e7d32;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+}
+
+/* Компактна ширина на групата на десктоп екран */
+.datePickerCard .input-group-points {
+    flex: 0 1 120px;
+}
+
+/* Мобилна оптимизация (екран до 600px) */
+@media (max-width: 600px) {
+    /* Разпъване на цяла ширина на телефон за лесно въвеждане */
+    .datePickerCard .input-group-points {
+        width: 100%;
+        flex: none;
+    }
+}
+.datePickerCard .input-group input[type="datetime-local"],
+.datePickerCard .input-group input[type="number"] {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+@media (max-width: 600px) {
+    .datePickerCard .input-group {
+        width: 100%;
+        max-width: 100%;
+        flex: none;
+        overflow: hidden; /* предпазва от излизане на нативни контроли */
+    }
+
+    .datePickerCard .filterFields {
+        width: 100%;
+        max-width: 100%;
     }
 }

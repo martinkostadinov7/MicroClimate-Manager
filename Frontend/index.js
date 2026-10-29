@@ -1,5 +1,5 @@
 async function getData() {
-    const url = "https://i594226.luna.fhict.nl/api/dashboard/latestData";
+    const url = "https://microclimatemanager.runasp.net/api/dashboard/latestData";
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -42,9 +42,8 @@ async function getData() {
     }
   }
 
-  // Нова функция за 24h статистиката
   async function get24HourStatistics() {
-    const url = "https://i594226.luna.fhict.nl/api/dashboard/statistics";
+    const url = "https://microclimatemanager.runasp.net/api/dashboard/statistics";
     try {
       const response = await fetch(url);
       if (!response.ok) {
@@ -122,23 +121,26 @@ async function getData() {
 
   const dateFromInput = document.getElementById('dateFrom');
   const dateToInput = document.getElementById('dateTo');
+  const pointsCountInput = document.getElementById('pointsCount');
 
   const initialFrom = formatForDateTimeLocal(yesterday);
   const initialTo = formatForDateTimeLocal(now);
+  const initialPointsCount = pointsCountInput ? pointsCountInput.value : 500;
 
   if (dateFromInput) dateFromInput.value = initialFrom;
   if (dateToInput) dateToInput.value = initialTo;
 
-  // Зареждаме графиките с локалното време
-  loadDashboardCharts(initialFrom, initialTo);
+  // Зареждаме графиките с локалното време и избраните точки
+  loadDashboardCharts(initialFrom, initialTo, initialPointsCount);
 
   const applyButton = document.getElementById('applyFilterButton'); 
   applyButton?.addEventListener('click', () => {
     if (dateFromInput.value && dateToInput.value) {
       const fromIso = dateFromInput.value; 
       const toIso = dateToInput.value;
+      const pCount = pointsCountInput ? pointsCountInput.value : 500;
       
-      loadDashboardCharts(fromIso, toIso);
+      loadDashboardCharts(fromIso, toIso, pCount);
     } else {
       alert("Please select both 'From' and 'To' dates.");
     }
@@ -153,8 +155,9 @@ async function getData() {
     return `${year}-${month}-${day}T${hours}:${minutes}`;
   }
 
-  async function loadDashboardCharts(fromDate, toDate) {
-    const url = `https://i594226.luna.fhict.nl/api/dashboard/chartData?from=${encodeURIComponent(fromDate)}&to=${encodeURIComponent(toDate)}&pointsCount=500`;
+  // Обновена функция - приема pointsCount като параметър
+  async function loadDashboardCharts(fromDate, toDate, pointsCount) {
+    const url = `https://microclimatemanager.runasp.net/api/dashboard/chartData?from=${encodeURIComponent(fromDate)}&to=${encodeURIComponent(toDate)}&pointsCount=${pointsCount}`;
     console.log(fromDate);
     console.log(toDate);
     try {
