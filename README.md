@@ -44,7 +44,7 @@
 
 ## Live Demo
 The web application is currently deployed and accessible at:
-[MicroClimate Manager Dashboard]([https://i594226.luna.fhict.nl/dashboard/index.html](https://i594226.hera.fontysict.net/index.html)) *(Note: Availability depends on active hosting)*
+[MicroClimate Manager Dashboard](https://i594226.hera.fontysict.net/index.html) *(Note: Availability depends on active hosting)*
 
 ## Repository Structure
 
